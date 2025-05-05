@@ -7,8 +7,9 @@ require("dotenv").config();
 const app = express();
 const PORT = 5000;
 app.use(cors({
-    origin: 'charming-blancmange-51ebdd.netlify.app'
+    origin: 'https://charming-blancmange-51ebdd.netlify.app'
 }));
+
 
 app.use(express.json());
 
