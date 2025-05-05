@@ -2,6 +2,10 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 require("dotenv").config();
+app.use(cors({
+    origin: 'charming-blancmange-51ebdd.netlify.app'
+  }));
+  
 
 const app = express();
 const PORT = 5000;
