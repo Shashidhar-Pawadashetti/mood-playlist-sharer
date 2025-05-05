@@ -4,7 +4,7 @@ document.getElementById("getPlaylists").addEventListener("click", async () => {
     playlistContainer.innerHTML = ""; // clear previous results
   
     try {
-      const res = await fetch(`http://localhost:5000/playlists?mood=${mood}`);
+      const res = await fetch(`https://mood-playlist-sharer.onrender.com`);
       const data = await res.json();
   
       if (!data.length) {
