@@ -2,14 +2,14 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 require("dotenv").config();
-app.use(cors({
-    origin: 'charming-blancmange-51ebdd.netlify.app'
-  }));
-  
+
 
 const app = express();
 const PORT = 5000;
-app.use(cors());
+app.use(cors({
+    origin: 'charming-blancmange-51ebdd.netlify.app'
+}));
+
 app.use(express.json());
 
 // Get Spotify access token
