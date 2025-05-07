@@ -35,3 +35,22 @@ document.getElementById("getPlaylists").addEventListener("click", async () => {
     }
   });
   
+// Add mood & playlist to Firestore
+function saveMoodData(mood, playlistUrl) {
+  db.collection("moods").add({
+    mood: mood,
+    playlist: playlistUrl,
+    timestamp: new Date()
+  }).then(() => {
+    alert("Data saved successfully!");
+  }).catch((error) => {
+    console.error("Error adding document: ", error);
+  });
+}
+
+// Read data from Firestore
+db.collection("moods").get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} =>`, doc.data());
+  });
+});
